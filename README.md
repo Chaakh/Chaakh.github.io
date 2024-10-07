@@ -16,6 +16,17 @@
             height: 100%;
             border: none;
         }
+        /* Hide specific elements */
+        iframe::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px; /* Adjust as needed */
+            background: white;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
