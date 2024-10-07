@@ -16,13 +16,15 @@ $isAuthenticated = isset($_SESSION['authenticated']) && $_SESSION['authenticated
             font-family: Arial, sans-serif;
         }
         <?php if ($isAuthenticated): ?>
+        .iframe-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
         iframe {
             border: none;
             width: 100%;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
         <?php else: ?>
         .login-container {
@@ -52,7 +54,9 @@ $isAuthenticated = isset($_SESSION['authenticated']) && $_SESSION['authenticated
 </head>
 <body>
     <?php if ($isAuthenticated): ?>
-        <iframe src="https://h5.colorpark.cn/#/pages/index/detailsphone?machine_id=1123146" frameborder="0"></iframe>
+        <div class="iframe-container">
+            <iframe src="https://h5.colorpark.cn/#/pages/index/detailsphone?machine_id=1123146" frameborder="0"></iframe>
+        </div>
     <?php else: ?>
         <div class="login-container">
             <h2>Login to Access Design Service</h2>
